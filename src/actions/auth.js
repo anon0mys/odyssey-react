@@ -1,6 +1,8 @@
+const baseUrl = process.env.REACT_APP_API_URL
+
 export const userPostFetch = user => {
   return dispatch => {
-    return fetch("http://localhost:3000/signup", {
+    return fetch(baseUrl + "/signup", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +26,7 @@ export const userPostFetch = user => {
 
 export const loginPostFetch = user => {
   return dispatch => {
-    return fetch("http://localhost:3000/login", {
+    return fetch(baseUrl + "/login", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -50,7 +52,7 @@ export const logoutDeleteFetch = user => {
   return dispatch => {
     const token = localStorage.token;
     if (token) {
-      return fetch("http://localhost:3000/logout", {
+      return fetch(baseUrl + "/logout", {
         method: "DELETE",
         headers: {
           'Content-Type': 'application/json',
