@@ -8,7 +8,7 @@ class OdysseyNav extends Component {
   loginOrProfile = (currentUser) => {
     if (currentUser) {
       return(
-        <Nav className="float-xs-right" navbar>
+        <Nav className="ml-auto" navbar>
           <NavItem>
             <NavLink tag={Link} to="/about">About</NavLink>
           </NavItem>
@@ -28,7 +28,7 @@ class OdysseyNav extends Component {
       )
     } else {
       return(
-        <Nav className="float-xs-right" navbar>
+        <Nav className="ml-auto" navbar>
           <NavItem>
             <NavLink tag={Link} to="/login">Log In</NavLink>
           </NavItem>
@@ -42,12 +42,10 @@ class OdysseyNav extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar color="inverse" dark full>
-          <NavbarBrand href="/">Odyssey</NavbarBrand>
-          {this.loginOrProfile(this.props.currentUser)}
-        </Navbar>
-      </div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Odyssey</NavbarBrand>
+        {this.loginOrProfile(this.props.currentUser)}
+      </Navbar>
     );
   }
 }
