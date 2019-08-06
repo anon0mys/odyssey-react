@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.scss';
 import {connect} from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -18,6 +18,8 @@ class App extends Component {
         <Router>
           <div className="Navbar">
             <OdysseyNav />
+          </div>
+          <div class="app_main">
             <Route exact path='/' component={Homepage} />
             <Route path='/login' component={Login} />
             <Route path='/logout' component={Logout} />
